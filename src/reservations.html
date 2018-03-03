@@ -1,0 +1,25 @@
+<!--ko with:seats-->
+  <h2>Your seat reservations (<!--ko text:length--><!--/ko-->)</h2>
+  <table>
+    <thead><tr data-bind="foreach: [
+      'Passenger name',
+      'Meal',
+      'Surcharge',
+    ]"><th data-bind="text: $data"></th></tr></thead>
+    <tbody data-bind="foreach: $data"><tr>
+      <td><input data-bind="value: name"></td>
+      <td><select data-bind="
+        options:     $parents[1].availableMeals,
+        optionsText: 'mealName',
+        value:        meal,
+      "></select></td>
+      <td data-bind="text: formattedPrice"></td>
+      <td><a href="#" data-bind="click: $parent.remove">Remove</a></td>
+    </tr></tbody>
+  </table>
+  <button data-bind="click: add">Reserve another seat</button>
+<!--/ko-->
+<!--ko with:totalSurcharge--><!--ko if:visible--><h3
+  >Total surcharge: $<span
+  data-bind="text: text"></span>
+</h3><!--/ko--><!--/ko-->
