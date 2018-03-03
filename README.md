@@ -1,4 +1,6 @@
 # knockoutjs-examples
+![build](https://travis-ci.org/AquaJerry/knockoutjs-examples.svg?branch=master)
+
 Codes from http://learn.knockoutjs.com
 
 ## Table of Contents
